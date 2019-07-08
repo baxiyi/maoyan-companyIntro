@@ -185,19 +185,17 @@ a.intro-link{
     position: absolute;
     top:0.38rem;
     right:0.3rem;
-    display: flex;
-    align-items: center;
-}
-.section-link p{
     color:#8F9296;
     font-size:0.24rem;
     line-height: 0.34rem;
+    display: flex;
+    align-items: center;
 }
 .right-arrow{
-    width:0.2rem;
-    height:0.2rem;
-    border-bottom:0.04rem solid #CCCCCC;
-    border-left:0.04rem solid #CCCCCC;
+    width:0.15rem;
+    height:0.15rem;
+    border-bottom:0.03rem solid #CCCCCC;
+    border-left:0.03rem solid #CCCCCC;
     transform: rotate(-135deg);
 }
 .members{
@@ -254,12 +252,12 @@ a.intro-link{
     font-size:0.26rem;
     line-height: 0.36rem;
     width:1.06rem;
-    flex-shrink: 0;
 }
 .information p:nth-child(2){
     color:#26282E;
     font-size:0.26rem;
     line-height: 0.36rem;
+    flex:1;
 }
 .line1,.line2,.line3{
     display: block;
