@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { classBody, directive } from '@babel/types';
+//import { classBody, directive } from '@babel/types';
 //import { directive } from '@babel/types/lib';
 
 class WorkItem extends React.Component{
@@ -101,6 +101,7 @@ class Description extends React.Component{
             arrowClassList:'down-arrow'
         }
     }
+    
     render(){
         return (
         <div class="description">
@@ -317,7 +318,7 @@ class Information extends React.Component{
             {
                 this.state.hasArrow?
                 <div class="information-more" 
-                    onClick={()=>this.handleClick()}>
+                    onClick={(event)=>this.handleClick(event)}>
                     <span>{this.state.arrowInfor}</span>
                     <img src={require("./assets/open.png")} alt="open"
                         class={this.state.arrowClassList}></img>
@@ -337,23 +338,26 @@ class Information extends React.Component{
             })
         }
     }
-    handleClick(){
-        if(this.state.arrowIsDown){
-            this.setState({
-                currentHeight:this.state.overHeight,
-                arrowClassList:'img-rotate',
-                arrowInfor:'收起',
-                arrowIsDown:!this.state.arrowIsDown
-            })
+    handleClick(event){
+        if(event.target.tagName==='SPAN'||event.target.tagName==='IMG'){
+            if(this.state.arrowIsDown){
+                this.setState({
+                    currentHeight:this.state.overHeight,
+                    arrowClassList:'img-rotate',
+                    arrowInfor:'收起',
+                    arrowIsDown:!this.state.arrowIsDown
+                })
+            }
+            else{
+                this.setState({
+                    currentHeight:'141px',
+                    arrowClassList:'',
+                    arrowInfor:'展开',
+                    arrowIsDown:!this.state.arrowIsDown
+                })
+            }
         }
-        else{
-            this.setState({
-                currentHeight:'141px',
-                arrowClassList:'',
-                arrowInfor:'展开',
-                arrowIsDown:!this.state.arrowIsDown
-            })
-        }
+        
     }
 
 }
